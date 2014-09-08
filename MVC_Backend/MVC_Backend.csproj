@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Helpers\CustomHtmlExtensions.cs" />
     <Compile Include="Helpers\QueryOptionHtmlExtensions.cs" />
+    <Compile Include="Helpers\WebSiteHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs">
       <DependentUpon>Workshop.tt</DependentUpon>
@@ -315,6 +316,9 @@
     <Content Include="Views\Shared\DisplayTemplates\SystemUser.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Html.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SystemUserName.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\PromptDateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

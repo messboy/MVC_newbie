@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MVC_Backend.Helpers;
 using MVC_Backend.Models;
 using MVC_Backend.ViewModels;
 using NLog;
@@ -119,11 +120,22 @@ namespace MVC_Backend.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,CategoryID,Subject,Summary,ContentText,IsPublish,PublishDate,ViewCount,CreateUser,CreateDate,UpdateUser,UpdateDate")] Article article)
+        public ActionResult Edit(Article article)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(article).State = EntityState.Modified;
+                var instance = db.Articles.FirstOrDefault(x => x.ID == article.ID);
+
+                instance.CategoryID = article.CategoryID;
+                instance.Subject = article.Subject;
+                instance.Summary = article.Summary;
+                instance.ContentText = article.ContentText;
+                instance.PublishDate = article.PublishDate;
+                instance.IsPublish = article.IsPublish;
+                instance.UpdateUser = WebSiteHelper.CurrentUserID;
+                instance.UpdateDate = DateTime.Now;
+
+                db.Entry(instance).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

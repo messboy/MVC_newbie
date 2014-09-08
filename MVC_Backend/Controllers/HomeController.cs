@@ -29,13 +29,13 @@ namespace MVC_Backend.Controllers
         public ActionResult Logon(LogonViewModel model)
         {
             var db = new WorkshopEntities();
-            var memberAccount = db.SystemUsers.Where(a => a.Account.Equals(model.Account)).Select(a => a.Password).SingleOrDefault();
+            var memberAccount = db.SystemUsers.FirstOrDefault(x => x.Account == model.Account);
 
             //驗證身份
             //CooKie
             if (ModelState.IsValid)
             {
-                if (memberAccount !=null && memberAccount.Equals(model.Password))
+                if (memberAccount != null && memberAccount.Password == model.Password)
                 {
 
                     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
@@ -43,7 +43,7 @@ namespace MVC_Backend.Controllers
                         DateTime.Now,
                         DateTime.Now.AddMinutes(30),
                         model.Remember, //將管理者登入的Cookie設定成Session Cookie
-                        "role", //role
+                        memberAccount.ID.ToString(), //role
 
                         FormsAuthentication.FormsCookiePath); //取得form表單路徑
                     //建立加密的票

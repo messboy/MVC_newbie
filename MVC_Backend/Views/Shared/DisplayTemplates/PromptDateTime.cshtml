@@ -1,0 +1,23 @@
+﻿@model DateTime?
+@if (Model.HasValue)
+{
+    var dateDiff = DateTime.Now - Model.Value;
+    var days = dateDiff.Days;
+
+    String cls = null;
+
+    if (days < -7)
+    {
+        cls = "label label-info";
+    }
+    else if (days > 0)
+    {
+        cls = null;
+    }
+    else
+    {
+        cls = "label label-warning";
+    }
+
+    <span class="@cls">@Model.Value.ToString("yyyy-MM-dd HH:mm")</span>
+}
