@@ -1,4 +1,4 @@
 MVC_newbie
 ==========
 
-practice
+練習無到有
