@@ -1,0 +1,133 @@
+2014-09-08 17:07:13.5522 TRACE Sample trace message
+2014-09-08 17:07:13.6142 DEBUG Sample debug message
+2014-09-08 17:07:13.6282 INFO Sample informational message
+2014-09-08 17:07:13.6392 WARN Sample warning message
+2014-09-08 17:07:13.6392 ERROR Sample error message
+2014-09-08 17:07:13.6612 FATAL Sample fatal error message
+2014-09-08 17:07:13.7412 INFO Sample informational message
+2014-09-08 17:07:29.0291 TRACE Sample trace message
+2014-09-08 17:07:29.0451 DEBUG Sample debug message
+2014-09-08 17:07:29.0571 INFO Sample informational message
+2014-09-08 17:07:29.0681 WARN Sample warning message
+2014-09-08 17:07:29.0681 ERROR Sample error message
+2014-09-08 17:07:29.0911 FATAL Sample fatal error message
+2014-09-08 17:07:29.1041 INFO Sample informational message
+2014-09-08 17:07:41.3678 TRACE Sample trace message
+2014-09-08 17:07:41.3888 DEBUG Sample debug message
+2014-09-08 17:07:41.3898 INFO Sample informational message
+2014-09-08 17:07:41.4048 WARN Sample warning message
+2014-09-08 17:07:41.4248 ERROR Sample error message
+2014-09-08 17:07:41.4378 FATAL Sample fatal error message
+2014-09-08 17:07:41.4378 INFO Sample informational message
+2014-09-08 17:07:42.3968 TRACE Sample trace message
+2014-09-08 17:07:42.4138 DEBUG Sample debug message
+2014-09-08 17:07:42.4248 INFO Sample informational message
+2014-09-08 17:07:42.4348 WARN Sample warning message
+2014-09-08 17:07:42.4348 ERROR Sample error message
+2014-09-08 17:07:42.4578 FATAL Sample fatal error message
+2014-09-08 17:07:42.4708 INFO Sample informational message
+2014-09-08 17:07:43.2709 TRACE Sample trace message
+2014-09-08 17:07:43.2829 DEBUG Sample debug message
+2014-09-08 17:07:43.2929 INFO Sample informational message
+2014-09-08 17:07:43.2929 WARN Sample warning message
+2014-09-08 17:07:43.3139 ERROR Sample error message
+2014-09-08 17:07:43.3249 FATAL Sample fatal error message
+2014-09-08 17:07:43.3249 INFO Sample informational message
+2014-09-08 17:07:47.5311 TRACE Sample trace message
+2014-09-08 17:07:47.5511 DEBUG Sample debug message
+2014-09-08 17:07:47.5511 INFO Sample informational message
+2014-09-08 17:07:47.5741 WARN Sample warning message
+2014-09-08 17:07:47.5851 ERROR Sample error message
+2014-09-08 17:07:47.5981 FATAL Sample fatal error message
+2014-09-08 17:07:47.5981 INFO Sample informational message
+2014-09-08 17:07:49.0502 TRACE Sample trace message
+2014-09-08 17:07:49.0682 DEBUG Sample debug message
+2014-09-08 17:07:49.0832 INFO Sample informational message
+2014-09-08 17:07:49.0832 WARN Sample warning message
+2014-09-08 17:07:49.1072 ERROR Sample error message
+2014-09-08 17:07:49.1172 FATAL Sample fatal error message
+2014-09-08 17:07:49.1312 INFO Sample informational message
+2014-09-08 17:07:50.3203 TRACE Sample trace message
+2014-09-08 17:07:50.3423 DEBUG Sample debug message
+2014-09-08 17:07:50.3433 INFO Sample informational message
+2014-09-08 17:07:50.3633 WARN Sample warning message
+2014-09-08 17:07:50.3633 ERROR Sample error message
+2014-09-08 17:07:50.3843 FATAL Sample fatal error message
+2014-09-08 17:07:50.3973 INFO Sample informational message
+2014-09-08 17:07:52.3584 TRACE Sample trace message
+2014-09-08 17:07:52.3774 DEBUG Sample debug message
+2014-09-08 17:07:52.3884 INFO Sample informational message
+2014-09-08 17:07:52.3884 WARN Sample warning message
+2014-09-08 17:07:52.4114 ERROR Sample error message
+2014-09-08 17:07:52.4214 FATAL Sample fatal error message
+2014-09-08 17:07:52.4214 INFO Sample informational message
+2014-09-08 17:07:54.0445 TRACE Sample trace message
+2014-09-08 17:07:54.0635 DEBUG Sample debug message
+2014-09-08 17:07:54.0745 INFO Sample informational message
+2014-09-08 17:07:54.0745 WARN Sample warning message
+2014-09-08 17:07:54.0955 ERROR Sample error message
+2014-09-08 17:07:54.1065 FATAL Sample fatal error message
+2014-09-08 17:07:54.1205 INFO Sample informational message
+2014-09-08 17:08:09.9564 TRACE Sample trace message
+2014-09-08 17:08:09.9694 DEBUG Sample debug message
+2014-09-08 17:08:09.9694 INFO Sample informational message
+2014-09-08 17:08:09.9934 WARN Sample warning message
+2014-09-08 17:08:10.0034 ERROR Sample error message
+2014-09-08 17:08:10.0034 FATAL Sample fatal error message
+2014-09-08 17:08:10.0154 INFO Sample informational message
+2014-09-08 17:08:11.2805 TRACE Sample trace message
+2014-09-08 17:08:11.2805 DEBUG Sample debug message
+2014-09-08 17:08:11.3035 INFO Sample informational message
+2014-09-08 17:08:11.3135 WARN Sample warning message
+2014-09-08 17:08:11.3135 ERROR Sample error message
+2014-09-08 17:08:11.3345 FATAL Sample fatal error message
+2014-09-08 17:08:11.3475 INFO Sample informational message
+2014-09-08 17:08:12.2925 TRACE Sample trace message
+2014-09-08 17:08:12.3025 DEBUG Sample debug message
+2014-09-08 17:08:12.3125 INFO Sample informational message
+2014-09-08 17:08:12.3125 WARN Sample warning message
+2014-09-08 17:08:12.3335 ERROR Sample error message
+2014-09-08 17:08:12.3435 FATAL Sample fatal error message
+2014-09-08 17:08:12.3555 INFO Sample informational message
+2014-09-08 17:08:13.9986 TRACE Sample trace message
+2014-09-08 17:08:14.0146 DEBUG Sample debug message
+2014-09-08 17:08:14.0256 INFO Sample informational message
+2014-09-08 17:08:14.0256 WARN Sample warning message
+2014-09-08 17:08:14.0466 ERROR Sample error message
+2014-09-08 17:08:14.0576 FATAL Sample fatal error message
+2014-09-08 17:08:14.0576 INFO Sample informational message
+2014-09-08 17:08:32.7257 TRACE Sample trace message
+2014-09-08 17:08:32.7377 DEBUG Sample debug message
+2014-09-08 17:08:32.7477 INFO Sample informational message
+2014-09-08 17:08:32.7477 WARN Sample warning message
+2014-09-08 17:08:32.7677 ERROR Sample error message
+2014-09-08 17:08:32.7837 FATAL Sample fatal error message
+2014-09-08 17:08:32.7947 INFO Sample informational message
+2014-09-08 17:08:51.4678 TRACE Sample trace message
+2014-09-08 17:08:51.4858 DEBUG Sample debug message
+2014-09-08 17:08:51.4988 INFO Sample informational message
+2014-09-08 17:08:51.5118 WARN Sample warning message
+2014-09-08 17:08:51.5118 ERROR Sample error message
+2014-09-08 17:08:51.5338 FATAL Sample fatal error message
+2014-09-08 17:08:51.5478 INFO Sample informational message
+2014-09-08 17:08:54.2189 TRACE Sample trace message
+2014-09-08 17:08:54.2419 DEBUG Sample debug message
+2014-09-08 17:08:54.2419 INFO Sample informational message
+2014-09-08 17:08:54.2639 WARN Sample warning message
+2014-09-08 17:08:54.2739 ERROR Sample error message
+2014-09-08 17:08:54.2739 FATAL Sample fatal error message
+2014-09-08 17:08:54.2979 INFO Sample informational message
+2014-09-08 17:09:08.4767 TRACE Sample trace message
+2014-09-08 17:09:08.4887 DEBUG Sample debug message
+2014-09-08 17:09:08.5017 INFO Sample informational message
+2014-09-08 17:09:08.5017 WARN Sample warning message
+2014-09-08 17:09:08.5237 ERROR Sample error message
+2014-09-08 17:09:08.5337 FATAL Sample fatal error message
+2014-09-08 17:09:08.5337 INFO Sample informational message
+2014-09-08 17:09:15.0191 TRACE Sample trace message
+2014-09-08 17:09:15.0421 DEBUG Sample debug message
+2014-09-08 17:09:15.0611 INFO Sample informational message
+2014-09-08 17:09:15.0741 WARN Sample warning message
+2014-09-08 17:09:15.0871 ERROR Sample error message
+2014-09-08 17:09:15.0871 FATAL Sample fatal error message
+2014-09-08 17:09:15.0991 INFO Sample informational message

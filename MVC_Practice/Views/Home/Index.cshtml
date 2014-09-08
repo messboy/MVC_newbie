@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section jumbotron
+{
+    <div class="jumbotron">
+    <h1>新人訓 MVC教學</h1>
+    <p class="lead">利用循序漸進的方式，引導新進人員完成一個CMS網站，在課程中，你學習到的是業界中、實務上可以立即上場的技術，我們希望藉由此練習將各式 ASP.NET MVC 的實務經驗中提取適合初學者的實戰經驗與技能。</p>
+    <p><a class="btn btn-lg btn-success" href="http://www.hy-tech.com.tw/" role="button">鴻揚科技</a></p>
+    </div>
+}
+
+
+<div class="row">
+    <div class="container">
+        <div class="col-lg-12">
+          @Html.Partial("_Listitem")
+        </div>
+    </div>
+</div>

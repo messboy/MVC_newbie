@@ -1,0 +1,7 @@
+2014-09-06 23:14:14.9263 TRACE Sample trace message
+2014-09-06 23:14:15.7714 DEBUG Sample debug message
+2014-09-06 23:14:16.1114 INFO Sample informational message
+2014-09-06 23:14:16.3774 WARN Sample warning message
+2014-09-06 23:14:16.6064 ERROR Sample error message
+2014-09-06 23:14:17.2444 FATAL Sample fatal error message
+2014-09-06 23:14:23.1538 INFO Sample informational message

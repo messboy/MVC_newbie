@@ -1,0 +1,247 @@
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:13.6612 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:29.0911 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:41.4378 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:42.4578 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:43.3249 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:47.5981 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:49.1172 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:50.3843 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:52.4214 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:07:54.1065 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:10.0034 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:11.3345 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:12.3435 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:14.0576 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:32.7837 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:51.5338 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:08:54.2739 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:09:08.5337 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 
+ ==================================================================================================== 
+ 發生時間：2014-09-08 17:09:15.0871 
+
+ Log等級：FATAL 
+
+ Logger：MVC_Backend.Controllers.ArticlesController 
+
+ Source：MVC_Backend.Controllers.ArticlesController.Index 
+
+ 錯誤訊息：Sample fatal error message 
+
+ ==================================================================================================== 
+ 

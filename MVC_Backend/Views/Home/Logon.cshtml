@@ -1,0 +1,67 @@
+﻿@model MVC_Backend.Models.LogonViewModel
+@{
+    ViewBag.Title = "Logon";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Logon</title>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .panel-body {
+            background: #fefefe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">管理後台登入</h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Logon", "Home", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            
+                            <fieldset>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.ValidationMessage("LogOnError", new {@class = "text-danger"})
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.Account, new { @class = "form-control text-box single-line", @placeholder="帳號" })
+                                    @Html.ValidationMessageFor(m => m.Account, "", new { @class="text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control text-box single-line password", @placeholder="密碼" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        @Html.CheckBoxFor(m => m.Remember)
+                                        @Html.LabelFor(m => m.Remember, new { @class="colorBlue" })
+                                    </label>
+                                </div>
+                                <input class="btn btn-success" type="submit" value="登入" />
+                                <input class="btn btn-default" type="button" value="取消" />
+                            </fieldset>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
