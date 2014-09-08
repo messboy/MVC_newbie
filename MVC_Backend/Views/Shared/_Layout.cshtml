@@ -20,10 +20,10 @@
     <div class="container">
         <div class="header">
             <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="@Url.Action("Index","Articles")">文章管理</a></li>
-                <li><a href="@Url.Action("Index", "Categories")">分類管理</a></li>
-                <li><a href="@Url.Action("Index", "SystemUsers")">人員管理</a></li>
+                <li class="@(Html.IsCurrentController("Home") ? "active" : "")"><a href="/">Home</a></li>
+                <li class="@(Html.IsCurrentController("Articles") ? "active" : "")"><a href="@Url.Action("Index","Articles")">文章管理</a></li>
+                <li class="@(Html.IsCurrentController("Categories") ? "active" : "")"><a href="@Url.Action("Index", "Categories")">分類管理</a></li>
+                <li class="@(Html.IsCurrentController("SystemUsers") ? "active" : "")"><a href="@Url.Action("Index", "SystemUsers")">人員管理</a></li>
                 <li class="dropdown pull-right">
                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">使用者：test <b class="caret"></b></a>
                     <ul class="dropdown-menu">
