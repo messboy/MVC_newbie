@@ -59,13 +59,13 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreateUser)
+                @Html.DisplayFor(modelItem => item.CreateUser, "SystemUserName")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreateDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UpdateUser)
+                @Html.DisplayFor(modelItem => item.UpdateUser, "SystemUserName")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UpdateDate)

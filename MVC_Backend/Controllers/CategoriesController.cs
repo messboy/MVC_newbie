@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_Backend.Models;
+using MVC_Backend.ViewModels;
+using MVC_Backend.Helpers;
 
 namespace MVC_Backend.Controllers
 {
@@ -15,10 +17,18 @@ namespace MVC_Backend.Controllers
         private WorkshopEntities db = new WorkshopEntities();
 
         // GET: Categories
-        public ActionResult Index(int page = 1, int count = 2, string keyword = null)
+        public ActionResult Index(QueryOption<Category> queryOption)
         {
+            var query = db.Categories.AsQueryable();
 
-            return View(db.Categories.ToList());
+            if (string.IsNullOrEmpty(queryOption.Keyword) == false)
+            {
+                query = query.Where(x => x.Name.Contains(queryOption.Keyword));
+            }
+
+            queryOption.SetSource(query);
+
+            return View(queryOption);
         }
 
         // GET: Categories/Details/5
@@ -86,9 +96,23 @@ namespace MVC_Backend.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Category category)
         {
+            var isExists = db.Categories
+                .Any(x => x.ID != category.ID && x.Name == category.Name);
+
+            if (isExists)
+            {
+                ModelState.AddModelError("Name", "Category Name Double");
+                return View(category);
+            }
+
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
+                var target = db.Categories.FirstOrDefault(x => x.ID == category.ID);
+
+                target.UpdateUser = WebSiteHelper.CurrentUserID;
+                target.UpdateDate = DateTime.Now;
+
+                db.Entry(target).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

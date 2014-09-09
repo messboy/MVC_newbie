@@ -1,65 +1,66 @@
-﻿@model IEnumerable<MVC_Backend.Models.Category>
-
+﻿@model MVC_Backend.ViewModels.QueryOption<MVC_Backend.Models.Category>
+@using MVC_Backend.Helpers
 @{
-   
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>Category - Index</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
+<div class="paging">
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @using (Html.BeginForm(null, null, FormMethod.Get, new { @class = "form-inline form-search" }))
+        {
+            @Html.TextBoxFor(x => x.Keyword, new { @class = "form-control" })
+            @Html.HiddenFor(x => x.Page)
+            @Html.HiddenFor(x => x.PageSize)
+            @Html.HiddenFor(x => x.Column)
+            @Html.HiddenFor(x => x.Order)
+
+            <input type="submit" class="btn btn-primary" value="查詢" />
+
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-default" })
+        }
     </p>
     <table class="table">
         <tr>
+            @Html.SortableFor(x => x.Name, "th")
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(x => x.Result.First().CreateUser)
+                |
+                @Html.SortableFor(x => x.CreateDate, "span")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreateUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreateDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdateUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdateDate)
+                @Html.DisplayNameFor(x => x.Result.First().UpdateUser)
+                |
+                @Html.SortableFor(x => x.UpdateDate, "span")
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdateUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UpdateDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model.Result)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateUser, "SystemUserName")
+                    <br />
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateUser, "SystemUserName")
+                    <br />
+                    @Html.DisplayFor(modelItem => item.UpdateDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
     </table>
-</body>
-</html>
+    @Html.PagedListPager(Model.Result, page => Url.Action("Index", new { page }))
+</div>
