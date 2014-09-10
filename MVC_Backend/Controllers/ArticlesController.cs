@@ -20,13 +20,13 @@ namespace MVC_Backend.Controllers
     {
         private WorkshopEntities db = new WorkshopEntities();
         private static Logger logger = LogManager.GetCurrentClassLogger();
-
         // GET: Articles
         public ActionResult Index(QueryOption<Article> queryOption)
         {
             // alternatively you can call the Log() method 
             // and pass log level as the parameter.
-            logger.Log(LogLevel.Info, "Sample informational message");
+            //logger.Log(LogLevel.Info, "Sample informational message");
+
             var query = db.Articles.Include(a => a.Category);
 
             if (!string.IsNullOrEmpty(queryOption.Keyword))
@@ -73,6 +73,7 @@ namespace MVC_Backend.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(Article article)
         {
             if (ModelState.IsValid)
@@ -112,6 +113,7 @@ namespace MVC_Backend.Controllers
         // 詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit(Article article)
         {
             if (ModelState.IsValid)
