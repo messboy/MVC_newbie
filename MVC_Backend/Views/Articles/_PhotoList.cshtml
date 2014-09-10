@@ -1,0 +1,45 @@
+﻿@model MVC_Backend.Models.Article
+
+<ul class="thumbnails col-md-offset-2 list-unstyled">
+    @if (Model != null && Model.Photos != null)
+    {
+        foreach (var photo in Model.Photos)
+        {
+            var id = "photo_" + photo.ID;
+            var url = Url.Action("ArticlePhoto", "Articles", new { id = photo.ID, w = 170, h = 128, fit = true });
+
+            <li id="@id" class="col-md-6 cleardix">
+                <div class="thumbnail clearfix">
+                    <img src="@url" alt="@photo.FileName" class="pull-left span2 clearfix img-rounded" style="margin-right: 10px;" >
+                    <div class="caption" class="pull-left">
+                        <h4><a href="@url">@photo.FileName</a></h4>
+                        <b>檔案描述: </b>@photo.Description
+                        <input type="button" id="@photo.ID"
+                               data-id="@photo.ID" data-filename="@photo.FileName"
+                               class="btn btn-danger pull-right DeletePhoto" value="刪除" />
+                    </div>
+                </div>
+            </li>
+        }
+    }
+</ul>
+
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="DeleteModal-label">刪除確認</h4>
+            </div>
+            <div class="modal-body">
+                <p>你確定要刪除此照片嗎?</p>
+                <p id="FileName"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="btnYes">確認</button>
+            </div>
+        </div>
+    </div>
+</div>    
+

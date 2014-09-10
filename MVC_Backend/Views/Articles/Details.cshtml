@@ -105,6 +105,8 @@
             </dd>
     
         </dl>
+
+        @Html.Partial("_DisplayPhotos", Model)
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |

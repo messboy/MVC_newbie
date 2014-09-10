@@ -1,0 +1,29 @@
+﻿<div class="form-gorp">
+    <label class="control-label col-md-2">檔案上傳</label>
+    <div class="col-md-10">
+        <div>
+            @Html.TextBox("Uploads[0]", null, new { type = "file" })
+            @Html.ValidationMessage("Uploads[0]")
+        </div>
+        <div>
+            <input type="file" name="Uploads[1]" />
+            @Html.ValidationMessage("Uploads[1]")
+        </div>
+        <div>
+            <input type="file" name="Uploads[2]" />
+            @Html.ValidationMessage("Uploads[2]")
+        </div>
+        <div>
+            <input type="file" name="Uploads[3]" />
+            @Html.ValidationMessage("Uploads[3]")
+        </div>
+        <div>
+            <input type="file" name="Uploads[4]" />
+            @Html.ValidationMessage("Uploads[4]")
+        </div>
+        <div>
+            <input type="file" name="Uploads[5]" />
+            @Html.ValidationMessage("Uploads[5]")
+        </div>
+    </div>
+</div>

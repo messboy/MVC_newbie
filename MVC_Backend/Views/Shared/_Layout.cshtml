@@ -13,6 +13,10 @@
     <!-- Bootstrap core CSS -->
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -53,13 +57,18 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/backend.paging.js"></script>
+
+
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
 
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
-    <script src="~/Scripts/ckeditor/config.js"></script>
-    <script src="~/Scripts/ckeditor/themes/default/theme.js"></script>
     <script src="~/Scripts/ckeditor/adapters/jquery.js"></script>
 
+
     <script src="~/Scripts/backend.js"></script>
+    <script src="~/Scripts/backend.paging.js"></script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

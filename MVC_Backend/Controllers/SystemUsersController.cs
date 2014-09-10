@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_Backend.Models;
+using MVC_Backend.ViewModels;
 
 namespace MVC_Backend.Controllers
 {
@@ -15,9 +16,22 @@ namespace MVC_Backend.Controllers
         private WorkshopEntities db = new WorkshopEntities();
 
         // GET: SystemUsers
-        public ActionResult Index(int page = 1, int count = 2, string keyword = null)
+        public ActionResult Index(QueryOption<SystemUser> queryOption)
         {
-            return View(db.SystemUsers.ToList());
+            var query = db.SystemUsers.AsQueryable();
+
+            if (string.IsNullOrEmpty(queryOption.Keyword) == false)
+            {
+                query = query.Where(x => x.Name.Contains(queryOption.Keyword)
+                                        ||
+                                        x.Account.Contains(queryOption.Keyword)
+                                        ||
+                                        x.Email.Contains(queryOption.Keyword));
+            }
+
+            queryOption.SetSource(query);
+
+            return View(queryOption);
         }
 
         // GET: SystemUsers/Details/5
