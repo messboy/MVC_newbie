@@ -198,7 +198,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LogonViewModel.cs" />
-    <Compile Include="Models\Metadata\Article.cs" />
     <Compile Include="Models\Metadata\Category.cs" />
     <Compile Include="Models\Metadata\SystemUser.cs" />
     <Compile Include="Models\Photo.cs">
