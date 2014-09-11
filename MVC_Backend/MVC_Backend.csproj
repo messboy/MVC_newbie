@@ -198,6 +198,7 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LogonViewModel.cs" />
+    <Compile Include="Models\Metadata\Article.cs" />
     <Compile Include="Models\Metadata\Category.cs" />
     <Compile Include="Models\Metadata\SystemUser.cs" />
     <Compile Include="Models\Photo.cs">
@@ -641,7 +642,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

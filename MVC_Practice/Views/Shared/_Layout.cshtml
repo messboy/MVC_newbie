@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using MVC_Uility
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -18,10 +20,10 @@
     <div class="container">
         <div class="header">
             <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
-                <li><a href="@Url.Action("Hot", "Article")">熱門文章</a></li>
-                <li><a href="@Url.Action("List", "Article")">文章列表</a></li>
-                <li><a href="#">RSS</a></li>
+                <li class= "@(Html.IsCurrentController("Home", "Index") ? "active" : "")"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li class="@(Html.IsCurrentController("Article", "Hot") ? "active" : "")"><a href="@Url.Action("Hot", "Article")">熱門文章</a></li>
+                <li class="@(Html.IsCurrentController("Article", "List") ? "active" : "")"><a href="@Url.Action("List", "Article")">文章列表</a></li>
+                @*<li><a href="#">RSS</a></li>*@
             </ul>
             <h3 class="text-muted">MVC 教學</h3>
         </div>
@@ -33,7 +35,7 @@
         
 
         <div>
-            <p>&copy; HY-tech 2014 (<a href="http://cppoi.blogspot.tw/">OI</a>) </p>
+            <p>&copy; tech 2014 (<a href="http://cppoi.blogspot.tw/">OI</a>) </p>
         </div>
 
     </div> <!-- /container -->

@@ -12,7 +12,7 @@ namespace MVC_Backend.Models
         public class ArticleMetadata
         {
             [DataType(DataType.Html)]
-            public object Content { get; set; }
+            public object ContentText { get; set; }
 
             [UIHint("SystemUser")]
             public object CreateUser { get; set; }

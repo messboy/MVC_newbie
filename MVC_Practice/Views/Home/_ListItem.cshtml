@@ -1,57 +1,20 @@
-﻿<h1>標題1</h1>
-<p>
-    「這個副教授~~~還有臉為人師表嗎?廠商是怎樣~~把台灣球迷當凱子削喔!手段使盡卻判13年~~衝衝衝，我真的笑了，的行為，海燕比高鐵還快，這個副教授~~~還有臉為人師表嗎?廠商是怎樣~~把台灣球迷當凱子削喔!手段使盡卻判13年~~衝衝衝，今晚娛樂ONLINE和我們一起搶先看吧。」
-</p>
-<div>
-    <span class="badge">Posted 2012-08-02 20:47:04</span>
-    <div class="pull-right">
-        <a class="btn btn-primary btn-sm" href="Detail.html">
-            <span class="glyphicon glyphicon-star"></span> 觀看更多
-        </a>
-        <span class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-user"></span> Star
-        </span>
-        <span class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-eye-open"></span> Star
-        </span>
+﻿@model IEnumerable<MVC_Model.Article>
+
+@foreach (var item in Model)
+{
+    <h1>@item.Subject</h1>
+    <p>
+        「@(item.Summary)」
+    </p>
+    <div>
+        <span class="badge">Posted @(item.PublishDate)</span>
+        <div class="pull-right">
+            <a class="btn btn-primary btn-sm" href="@Url.Action("Details", "Article", new {id=@item.ID })">
+                <span class="glyphicon glyphicon-star"></span> 觀看更多
+            </a>
+        </div>
     </div>
-</div>
-<hr>
-<h1>標題2</h1>
-<p>
-    「你們罵我腦殘，加油要快，為了65萬考生的人生幸福，染料恐致癌，為演狀況劇，AV版《神鬼奇航》，染料恐致癌，好心乘客讓出肩膀，比較對？」
-</p>
-<div>
-    <span class="badge">Posted 2012-08-02 20:47:04</span>
-    <div class="pull-right">
-        <a class="btn btn-primary btn-sm" href="Detail.html">
-            <span class="glyphicon glyphicon-star"></span> 觀看更多
-        </a>
-        <span class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-user"></span> Star
-        </span>
-        <span class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-eye-open"></span> Star
-        </span>
-    </div>
-</div>
-<hr>
-<h1>標題3</h1>
-<p>
-    「嘿!你今天買報紙了沒?快拿出你預藏的安全小剪刀，不運動，這不是教學，我相信我此生都不會跟他們有交集的...一定不會有的，她最心疼和抱歉的是家人受到打擾，是好還是壞!?有誰能列出蘋果、三星、hTC、SONY......等的爆炸史嗎？」
-</p>
-<div>
-    <span class="badge">Posted 2012-08-02 20:47:04</span>
-    <div class="pull-right">
-        <a class="btn btn-primary btn-sm" href="Detail.html">
-            <span class="glyphicon glyphicon-star"></span> 觀看更多
-        </a>
-        <span class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-user"></span> Star
-        </span>
-        <span class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-eye-open"></span> Star
-        </span>
-    </div>
-</div>
-<hr>
+    <div class="clearfix"></div>
+    <hr>
+}
+
