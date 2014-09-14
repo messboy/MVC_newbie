@@ -104,17 +104,22 @@
             <dd>
                 @Html.DisplayFor(model => model.Category.Name)
             </dd>
+            <dd>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" />
+
+                    </div>
+                }
+            </dd>
+</dl>
     
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
+       
+        
+        @Html.ActionLink("Back to List", "Index")
     </div>
 </body>
 </html>
