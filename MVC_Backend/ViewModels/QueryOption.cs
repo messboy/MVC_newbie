@@ -21,6 +21,7 @@ namespace MVC_Backend.ViewModels
 
         public IPagedList<T> Result { get; set; }
 
+        //建構子
         public QueryOption()
         {
             Page = 1;
@@ -34,6 +35,7 @@ namespace MVC_Backend.ViewModels
 
         public void SetSource(IQueryable<T> source)
         {
+            //處理排序
             if (string.IsNullOrEmpty(Column))
             {
                 Column = typeof(T).GetProperties().First().Name;
@@ -61,6 +63,7 @@ namespace MVC_Backend.ViewModels
                 query = Queryable.OrderByDescending(source, keySelector);
             }
 
+            //設定分頁
             Result = query.ToPagedList(Page, PageSize);
         }
     }

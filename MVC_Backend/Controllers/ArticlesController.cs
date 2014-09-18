@@ -26,12 +26,12 @@ namespace MVC_Backend.Controllers
 		// GET: Articles
 		public ActionResult Index(QueryOption<Article> queryOption)
 		{
-			// alternatively you can call the Log() method 
-			// and pass log level as the parameter.
 			//logger.Log(LogLevel.Info, "Sample informational message");
             
+            // Articles 關聯 Category table
 			var query = db.Articles.Include(a => a.Category);
 
+            // 查詢資料
 			if (!string.IsNullOrEmpty(queryOption.Keyword))
 			{
 				query = query.Where(a => a.Subject.Contains(queryOption.Keyword)
@@ -44,6 +44,7 @@ namespace MVC_Backend.Controllers
 											   );
 			}
 
+            // 設定排序、分頁
 			queryOption.SetSource(query);
 
 			return View(queryOption);
@@ -52,15 +53,20 @@ namespace MVC_Backend.Controllers
 		// GET: Articles/Details/5
 		public ActionResult Details(Guid? id)
 		{
+            //防呆
 			if (id == null)
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
+
+            //查詢資料
 			Article article = db.Articles.Find(id);
 			if (article == null)
 			{
 				return HttpNotFound();
 			}
+
+            //返回View
 			return View(article);
 		}
 
@@ -79,23 +85,28 @@ namespace MVC_Backend.Controllers
 		[ValidateInput(false)]
 		public ActionResult Create(Article article, HttpPostedFileBase[] uploads)
 		{
+            //檢查副檔名
 			CheckFiles(uploads);
 
+            //資料驗證
 			if (ModelState.IsValid)
 			{
 				article.ID = Guid.NewGuid();
 				article.CreateUser = WebSiteHelper.CurrentUserID;
                 article.UpdateUser = WebSiteHelper.CurrentUserID;
-				//自己新增更新時間
+				//更新時間
 				article.CreateDate = DateTime.Now;
 				article.UpdateDate = DateTime.Now;
 
 				db.Articles.Add(article);
 
-                //處理圖片
+                //上傳圖片資料
                 HandleFiles(article, uploads);
 
+                //更新資料庫
 				db.SaveChanges();
+
+                //返回頁面
 				return RedirectToAction("Index");
 			}
 
@@ -127,8 +138,10 @@ namespace MVC_Backend.Controllers
 		[ValidateInput(false)]
 		public ActionResult Edit(Article article, HttpPostedFileBase[] uploads)
 		{
+            //檢查副檔名
 			CheckFiles(uploads);
 
+            //驗證更新資料
 			if (ModelState.IsValid)
 			{
 				var instance = db.Articles.FirstOrDefault(x => x.ID == article.ID);
@@ -146,6 +159,7 @@ namespace MVC_Backend.Controllers
                 //處理圖片
                 HandleFiles(article, uploads);
 
+                //更新資料庫
 				db.SaveChanges();
 				return RedirectToAction("Index");
 			}
@@ -182,7 +196,10 @@ namespace MVC_Backend.Controllers
                 this.DeletePhoto(photo.ID);
             }
 
+            //移除文章
 			db.Articles.Remove(article);
+
+            //更新資料庫
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
@@ -196,6 +213,10 @@ namespace MVC_Backend.Controllers
 			base.Dispose(disposing);
 		}
 
+        /// <summary>
+        /// 檢查副檔名
+        /// </summary>
+        /// <param name="uploads">上傳檔案</param>
 		private void CheckFiles(HttpPostedFileBase[] uploads)
 		{
 			if (uploads != null)
@@ -215,6 +236,11 @@ namespace MVC_Backend.Controllers
 
 		}
 
+        /// <summary>
+        /// 上傳圖片
+        /// </summary>
+        /// <param name="article">文章物件</param>
+        /// <param name="uploads">上傳檔案陣列</param>
 		private void HandleFiles(Article article, HttpPostedFileBase[] uploads)
 		{
 			var timeStamp = DateTime.Now;
@@ -247,7 +273,7 @@ namespace MVC_Backend.Controllers
 						UpdateDate = timeStamp
 					};
 					db.Photos.Add(photo);
-					article.Photos.Add(photo);
+					article.Photos.Add(photo);  //關聯
 				}
 				else
 				{
@@ -267,6 +293,13 @@ namespace MVC_Backend.Controllers
 			}
 		}
 
+        /// <summary>
+        /// 縮圖
+        /// </summary>
+        /// <param name="id">圖片ID</param>
+        /// <param name="w">寬度</param>
+        /// <param name="h">高度</param>
+        /// <returns></returns>
         public ActionResult ArticlePhoto(Guid id, int w, int h)
         {
             var photo = db.Photos.FirstOrDefault(x => x.ID == id);
@@ -285,6 +318,11 @@ namespace MVC_Backend.Controllers
             return File(image.GetBytes(), "image/jpeg");
         }
 
+        /// <summary>
+        /// 刪除圖片
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult DeletePhoto(Guid id)
         {
             var photo = db.Photos.FirstOrDefault(x => x.ID == id);

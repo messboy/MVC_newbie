@@ -14,6 +14,9 @@ namespace MVC_Practice.Controllers
         private WorkShopEntities db = new WorkShopEntities();
         private int pageSize = 5;
 
+        /// <summary>
+        /// 取得所有類別
+        /// </summary>
         public List<Category> Catrgories
         {
             get
@@ -21,16 +24,20 @@ namespace MVC_Practice.Controllers
                 return db.Categories.OrderByDescending(x => x.CreateDate).ToList();
             }
         }
+
         // GET: Article
         public ActionResult Hot(Guid? categoryID, int page = 1)
         {
             ViewBag.CategoryID = !categoryID.HasValue ? "" : categoryID.ToString();
             ViewBag.ArticleCategories = new SelectList(this.Catrgories, "ID", "Name", categoryID);
 
+            //分頁防呆
             int pageIndex = page < 1 ? 1 : page;
+
+            //顯示發佈時間內的文章
             var articles = db.Articles.Where(x => x.IsPublish && x.PublishDate <= DateTime.Now);
 
-
+            //類別分類
             if (categoryID.HasValue)
             {
                 articles = articles
@@ -42,6 +49,7 @@ namespace MVC_Practice.Controllers
                 articles = articles.OrderByDescending(x => x.ViewCount);
             }
 
+            //設定分頁
             return View(articles.ToPagedList(pageIndex, pageSize));
         }
 
