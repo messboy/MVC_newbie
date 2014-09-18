@@ -63,6 +63,8 @@ namespace MVC_Backend.Controllers
             {
                 category.ID = Guid.NewGuid();
 
+                category.UpdateUser = WebSiteHelper.CurrentUserID;
+                category.CreateUser = WebSiteHelper.CurrentUserID;
                 category.CreateDate = DateTime.Now;
                 category.UpdateDate = DateTime.Now;
 

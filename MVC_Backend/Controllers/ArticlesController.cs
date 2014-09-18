@@ -29,7 +29,7 @@ namespace MVC_Backend.Controllers
 			// alternatively you can call the Log() method 
 			// and pass log level as the parameter.
 			//logger.Log(LogLevel.Info, "Sample informational message");
-
+            
 			var query = db.Articles.Include(a => a.Category);
 
 			if (!string.IsNullOrEmpty(queryOption.Keyword))
@@ -85,6 +85,7 @@ namespace MVC_Backend.Controllers
 			{
 				article.ID = Guid.NewGuid();
 				article.CreateUser = WebSiteHelper.CurrentUserID;
+                article.UpdateUser = WebSiteHelper.CurrentUserID;
 				//自己新增更新時間
 				article.CreateDate = DateTime.Now;
 				article.UpdateDate = DateTime.Now;

@@ -191,10 +191,10 @@
     <Compile Include="Helpers\WebSiteHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs">
-      <DependentUpon>Workshop.tt</DependentUpon>
+      <DependentUpon>test.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>Workshop.tt</DependentUpon>
+      <DependentUpon>test.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LogonViewModel.cs" />
@@ -202,10 +202,25 @@
     <Compile Include="Models\Metadata\Category.cs" />
     <Compile Include="Models\Metadata\SystemUser.cs" />
     <Compile Include="Models\Photo.cs">
-      <DependentUpon>Workshop.tt</DependentUpon>
+      <DependentUpon>test.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SystemUser.cs">
-      <DependentUpon>Workshop.tt</DependentUpon>
+      <DependentUpon>test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Workshop.Context.cs">
       <AutoGen>True</AutoGen>
@@ -229,6 +244,10 @@
     <Compile Include="ViewModels\QueryOption.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Workshop.mdf" />
+    <Content Include="App_Data\Workshop_log.ldf">
+      <DependentUpon>Workshop.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Readme\Elmah.SqlServer.sql" />
     <Content Include="App_Readme\Elmah.SqlServer.txt" />
     <Content Include="App_Readme\Elmah.txt" />
@@ -248,6 +267,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <EntityDeploy Include="Models\Workshop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Workshop.Designer.cs</LastGenOutput>
@@ -265,9 +288,22 @@
       <DependentUpon>Workshop.edmx</DependentUpon>
       <LastGenOutput>Workshop.cs</LastGenOutput>
     </Content>
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
+    <EntityDeploy Include="Models\test.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>test.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\test.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>test.edmx</DependentUpon>
+      <LastGenOutput>test.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\test.edmx.diagram">
+      <DependentUpon>test.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\test.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>test.edmx</DependentUpon>
+      <LastGenOutput>test.cs</LastGenOutput>
     </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -685,9 +721,7 @@
     <Content Include="Views\Articles\_PhotoList.cshtml" />
     <Content Include="Views\Articles\_DisplayPhotos.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

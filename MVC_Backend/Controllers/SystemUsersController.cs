@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVC_Backend.Models;
 using MVC_Backend.ViewModels;
+using MVC_Backend.Helpers;
 
 namespace MVC_Backend.Controllers
 {
@@ -66,6 +67,9 @@ namespace MVC_Backend.Controllers
             {
                 systemUser.ID = Guid.NewGuid();
 
+
+                systemUser.UpdateUser = WebSiteHelper.CurrentUserID;
+                systemUser.CreateUser = WebSiteHelper.CurrentUserID;
                 systemUser.CreateDate = DateTime.Now;
                 systemUser.UpdateDate = DateTime.Now;
 
@@ -101,7 +105,12 @@ namespace MVC_Backend.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(systemUser).State = EntityState.Modified;
+                var target = db.SystemUsers.FirstOrDefault(x => x.ID == systemUser.ID);
+
+                target.UpdateUser = WebSiteHelper.CurrentUserID;
+                target.UpdateDate = DateTime.Now;
+
+                db.Entry(target).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

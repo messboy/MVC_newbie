@@ -28,7 +28,7 @@
                             : "http://localhost:2020" + Url.Action("ArticlePhoto", "Articles", new { id = photo.ID, w = 1200, h = 600, fit = true });
 
                         <div class="item @(countInners == 0 ? "active" : "")">
-                            <img alt="@photo.FileName" src="@url">
+                            <img alt="@photo.FileName" src="@url" width="100%">
                             @*<div class="carousel-caption">
                                     <h3>Caption heading 1</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
